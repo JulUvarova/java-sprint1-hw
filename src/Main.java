@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import java.util.Scanner;
 
 public class Main {
@@ -32,3 +33,10 @@ public class Main {
                 "\n\t 0 - выйти из приложения.");
     }
 }
+=======
+public class Main {
+    public static void main(String[] args) {
+        System.out.println("Пришло время практики!");
+    }
+}
+>>>>>>> e88a27f (Create project structure)
