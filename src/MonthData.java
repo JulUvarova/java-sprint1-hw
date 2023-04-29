@@ -6,8 +6,8 @@ public class MonthData {
     void printDaysAndStepsFromMonth() {
         System.out.println("За этот месяц вы прошли:");
         for (int i = 0; i < days.length; i++)
-            //while (i < days.length);
-            System.out.println("\t" + (i + 1) + " день: " + days[i]);
+        //while (i < days.length);
+        System.out.println("\t" + (i + 1) + " день: " + days[i]);
     }
     int sumStepsFromMonth() {
         int sum = 0;

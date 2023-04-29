@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 public class StepTracker {
-    // поля класса
+// поля класса
     Scanner scanner;
     MonthData[] monthToData = new MonthData[12];
     MonthData monthData = new MonthData();
@@ -14,7 +14,7 @@ public class StepTracker {
             monthToData[i] = new MonthData();
         }
     }
-    // методы класса
+// методы класса
     void changeStepGoal() { // меняем цель шагов
         System.out.println("Сейчас целевое значение " + goalByStepsPerDay + " шагов в день. \nСколько вы хотите установить?");
         goalByStepsPerDay = scanner.nextInt();
@@ -24,22 +24,22 @@ public class StepTracker {
     void addNewNumberStepsPerDay() { // сохраняем шаги за день в месяц
         System.out.println("Введите номер месяца:");
         int month = scanner.nextInt();
-        if (month < 1 | month > 12) {
-            System.out.println("Ошибка! Используйте диапазон от 1 до 12.");
-            return;
-        }
+            if (month < 1 | month > 12) {
+                System.out.println("Ошибка! Используйте диапазон от 1 до 12.");
+                return;
+            }
         System.out.println("Введите нужный день:");
         int day = scanner.nextInt();
-        if (day < 1 | day > 30) {
-            System.out.println("Ошибка! Используйте диапазон от 1 до 30.");
-            return;
-        }
+            if (day < 1 | day > 30) {
+                System.out.println("Ошибка! Используйте диапазон от 1 до 30.");
+                return;
+            }
         System.out.println("Введите количество пройденных шагов:");
         int steps = scanner.nextInt();
-        if (steps < 1) {
-            System.out.println("Ошибка! Количество пройденных шагов не должно быть меньше единицы.");
-            return;
-        }
+            if (steps < 1) {
+                System.out.println("Ошибка! Количество пройденных шагов не должно быть меньше единицы.");
+                return;
+            }
         MonthData monthData = monthToData[month - 1]; // сохраняем // нарушение условий
         monthData.days[day - 1] = steps;
 
@@ -50,10 +50,10 @@ public class StepTracker {
     void printStatistic() {// выводим статистику
         System.out.println("Введите номер месяца:");
         int currentMonth = scanner.nextInt();
-        if (currentMonth < 1 | currentMonth > 12) {
-            System.out.println("Ошибка! Используйте диапазон от 1 до 12.");
-            return;
-        }
+            if (currentMonth < 1 | currentMonth > 12) {
+                System.out.println("Ошибка! Используйте диапазон от 1 до 12.");
+                return;
+            }
         monthData = monthToData[currentMonth-1];
         monthData.printDaysAndStepsFromMonth();
         System.out.println("Сумма шагов за этот месяц - " + monthData.sumStepsFromMonth());
