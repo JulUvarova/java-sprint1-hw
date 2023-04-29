@@ -5,22 +5,21 @@ public class MonthData {
     // методы по статистике за месяц
     void printDaysAndStepsFromMonth() {
         System.out.println("За этот месяц вы прошли:");
-        for (int i = 0; i < days.length; i++)
-        //while (i < days.length);
-        System.out.println("\t" + (i + 1) + " день: " + days[i]);
+            for (int i = 0; i < days.length; i++)
+            System.out.println("\t" + (i + 1) + " день: " + days[i]);
     }
     int sumStepsFromMonth() {
         int sum = 0;
-        for (int i = 0; i < days.length; i++) {
-            sum = sum + days[i];
+        for (int day : days) {
+            sum = sum + day;
         }
         return sum;
     }
     int maxSteps() {
         int max = days[0];
-        for (int i = 0; i < days.length; i++) {
-            if (days[i] > max) {
-                max = days[i];
+        for (int day : days) {
+            if (day > max) {
+                max = day;
             }
         }
         return max;
@@ -28,9 +27,9 @@ public class MonthData {
     int bestSeries(int goal) {
         int currentSeries = 0;
         int finalSeries = 0;
-        for (int i = 0; i < days.length; i++) {
-            if (days[i] >= goal) {
-                if (++currentSeries > finalSeries){
+        for (int day : days) {
+            if (day >= goal) {
+                if (++currentSeries > finalSeries) {
                     finalSeries = currentSeries;
                 }
             } else {
@@ -41,10 +40,9 @@ public class MonthData {
     }
     int averageSteps() {
         int sum = 0;
-        for (int i = 0; i < days.length; i++) {
-            sum = sum + days[i];
+        for (int day : days) {
+            sum = sum + day;
         }
-        int average = sum / 30;
-        return average;
+        return sum / 30;
     }
 }
